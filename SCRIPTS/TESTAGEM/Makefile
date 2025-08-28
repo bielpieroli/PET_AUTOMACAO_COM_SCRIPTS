@@ -57,6 +57,10 @@ dirs: $(TEST_DIR)
 	@for src in $(SRC); do \
     	dirname=$$(basename $$src .c); \
     	mkdir -p $(TEST_DIR)/$$dirname; \
+			mkdir -p $(TEST_DIR)/$$dirname/in; \
+			mkdir -p $(TEST_DIR)/$$dirname/out; \
+			mv $(TEST_DIR)/$$dirname/*.in $(TEST_DIR)/$$dirname/in; \
+			mv $(TEST_DIR)/$$dirname/*.out $(TEST_DIR)/$$dirname/out; \
 	done
 	@echo "Pastas de testes criadas em '$(TEST_DIR)'."
 
